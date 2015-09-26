@@ -3,7 +3,7 @@ Use ng-repeat with an array of JSON objects and decide how many items to show pe
 
 <img src="http://clickthisnick.com/projects/ng-repeat-array/images/example.png">
 
-<h2> I needed an easy way to show a 3x3 grid from an array with 9 JSON objects in it </h2>
+<h2> I needed an easy way to create a 3x3 grid from an array of 9 JSON objects</h2>
 
 <h3> Lets dissect the code</h3>
 
