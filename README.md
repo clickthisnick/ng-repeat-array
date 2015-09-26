@@ -1,5 +1,5 @@
 # ng-repeat-array
-Use ng-repeat with an array and decide how many items to show per row
+Use ng-repeat with an array of JSON objects and decide how many items to show per row
 
 <img src="http://clickthisnick.com/projects/ng-repeat-array/images/example.png">
 
