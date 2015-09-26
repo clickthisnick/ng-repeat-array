@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="repeat">
+<head>
+  <link rel="stylesheet" type="text/css" href="lib/css/ceruleanBootswatch.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="lib/js/jquery-1.11.3.min.js"></script>
+  <script src="lib/js/bootstrap.min.js"></script>
+  <script src="AngularRepeatArray.js"></script>
+  <script src="example.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body class="container" ng-controller="Controller as repeater">
+
+  <h3> Angular is good at looping through an array and showing every element sequentially </h3>
+  <div ng-repeat="item in repeater.getFourItems">
+
+    <button>
+      {{item.id}}
+    </button>
+
+  </div>
+
+  <hr>
+
+  <h3> Angular is not so good at looping through an array and putting them into different rows </h3>
+  <div ng-repeat="item in repeater.getNgRepeatArray(repeater.getFourItems,3) track by $index">
+
+    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,1,'id') != ''">
+      <button>
+        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,1,'id')}}
+      </button>
+    </span>
+
+    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id') != ''">
+      <button>
+        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id')}}
+      </button>
+    </span>
+
+    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id') != ''">
+      <button>
+        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,3,'id')}}
+      </button>
+    </span>
+
+
+  </div>
+
+  <hr>
+
+</body>
+</html>
