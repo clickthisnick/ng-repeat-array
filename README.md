@@ -7,7 +7,7 @@ Use ng-repeat with an array of JSON objects and decide how many items to show pe
 
 <h3> Lets dissect the code</h3>
 
-<div ng-repeat="item in repeater.getNgRepeatArray(repeater.getFourItems,3) track by $index">
+    <div ng-repeat="item in repeater.getNgRepeatArray(repeater.getFourItems,3) track by $index">
 
 The only thing special in this line is the 3. This is telling the code that you want to show 3 items per row
 
