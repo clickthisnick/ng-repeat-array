@@ -22,11 +22,11 @@ Next you will need 3 of the following:
 The function getNgRepeatArrayObjectProperty takes the following parameters:
 (objects,index,columnTotal,currentColumn,property)
 
-objects = The array of JSON objects that you want to show
-index = $index, which is the index from our ng-repeat
-columnTotal = The amount of columns you have, so if in your ng-repeat code you put 3, this must also be 3
-currentColumn = The current column this item is on. If you have a columnTotal of 3 then you will need three of these code blocks (1,2,3)
-property = This is the property of the JSON object you want to return
+objects = The array of JSON objects that you want to show<br>
+index = $index, which is the index from our ng-repeat<br>
+columnTotal = The amount of columns you have, so if in your ng-repeat code you put 3, this must also be 3<br>
+currentColumn = The current column this item is on. If you have a columnTotal of 3 then you will need three of these code blocks (1,2,3)<br>
+property = This is the property of the JSON object you want to return<br>
 
 If it is confusing download and run the example.html file or look at the AngularRepeatArrayTests.html test file.
 
