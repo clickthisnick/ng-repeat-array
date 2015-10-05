@@ -1,7 +1,7 @@
-function NgArrayRepeat() {}
+function NgArrRepeat() {}
 
 //Private
-NgArrayRepeat.getRowCount = function(items,numberPerRow){
+NgArrRepeat.getRowCount = function(items,numberPerRow){
 	if (!items){
 		return null;
 	}
@@ -11,13 +11,13 @@ NgArrayRepeat.getRowCount = function(items,numberPerRow){
 	return Math.ceil(items.length/numberPerRow);
 };
 
-NgArrayRepeat.getViewModelItems = function(items,numberPerRow){
+NgArrRepeat.getViewModelItems = function(items,numberPerRow){
 	if (!items){
 		return null;
 	}
 
-	var itemsCopy = NgArrayRepeat.deepCopyArray(items);
-	var rowCount = NgArrayRepeat.getRowCount(items,numberPerRow);
+	var itemsCopy = NgArrRepeat.deepCopyArray(items);
+	var rowCount = NgArrRepeat.getRowCount(items,numberPerRow);
 	if (items.length > rowCount){
 		var numItemToAdd = Math.abs(items.length - numberPerRow);
 		for (var i = 0; i < numItemToAdd; i++) {
@@ -27,7 +27,7 @@ NgArrayRepeat.getViewModelItems = function(items,numberPerRow){
 	return itemsCopy;
 };
 
-NgArrayRepeat.deepCopyArray = function(array){
+NgArrRepeat.deepCopyArray = function(array){
 	var newArray=[];
 
 	for(var i=0;i<array.length;i++){
@@ -36,7 +36,7 @@ NgArrayRepeat.deepCopyArray = function(array){
 	return newArray;
 };
 
-NgArrayRepeat.createEmptyArray = function(num) {
+NgArrRepeat.createEmptyArray = function(num) {
 	if (!num){
 		return null;
 	}
@@ -52,7 +52,7 @@ NgArrayRepeat.createEmptyArray = function(num) {
 };
 
 //Public
-NgArrayRepeat.getNgRepeatArray = function(items,numberPerRow){
+NgArrRepeat.ngArrLoop = function(items,numberPerRow){
 	if (!items){
 		return null;
 	}
@@ -61,12 +61,12 @@ NgArrayRepeat.getNgRepeatArray = function(items,numberPerRow){
 		return null;
 	}
 
-    var rowCount = NgArrayRepeat.getRowCount(items,numberPerRow);
-    return NgArrayRepeat.createEmptyArray(rowCount);
+    var rowCount = NgArrRepeat.getRowCount(items,numberPerRow);
+    return NgArrRepeat.createEmptyArray(rowCount);
 };
 
-// TODO: Need to test this, also test if property is no on viewModelArray at index
-NgArrayRepeat.getNgRepeatArrayObjectProperty = function(items,index,columnTotal,currentColumn,property){
+
+NgArrRepeat.ngArrProp = function(items,index,columnTotal,currentColumn,property){
 	if (!items){
 		return "";
 	}
@@ -79,18 +79,23 @@ NgArrayRepeat.getNgRepeatArrayObjectProperty = function(items,index,columnTotal,
 		return "";
 	}
 
-	if (!property){
-		return "";
-	}
-
 	// Subtracting one to makes things easier of UI, row/columns start at 1 not 0
     var viewModelIndex = index * columnTotal + (currentColumn - 1);
-    var viewModelArray = NgArrayRepeat.getViewModelItems(items,columnTotal);
+    var viewModelArray = NgArrRepeat.getViewModelItems(items,columnTotal);
+    
     if (viewModelArray[viewModelIndex] == null){
       return "";
     }
+
     if (!viewModelArray[viewModelIndex][property]){
-    	return "";
+    	if (property != null){
+    		return "";
+    	}
     }
+
+    if (property == null) {
+    	return viewModelArray[viewModelIndex];
+    }
+
     return viewModelArray[viewModelIndex][property];
 };

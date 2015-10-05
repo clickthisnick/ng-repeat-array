@@ -26,23 +26,23 @@
   <hr>
 
   <h3> Angular is not so good at looping through an array and putting them into different rows </h3>
-  <div ng-repeat="item in repeater.getNgRepeatArray(repeater.getFourItems,3) track by $index">
+  <div ng-repeat="item in repeater.ngArrLoop(repeater.getFourItems,3) track by $index">
 
-    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,1,'id') != ''">
+    <span ng-if="repeater.ngArrProp(repeater.getFourItems,$index,3,1,'id') != ''">
       <button>
-        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,1,'id')}}
+        {{repeater.ngArrProp(repeater.getFourItems,$index,3,1,'id')}}
       </button>
     </span>
 
-    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id') != ''">
+    <span ng-if="repeater.ngArrProp(repeater.getFourItems,$index,3,2,'id') != ''">
       <button>
-        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id')}}
+        {{repeater.ngArrProp(repeater.getFourItems,$index,3,2,'id')}}
       </button>
     </span>
 
-    <span ng-if="repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,2,'id') != ''">
+    <span ng-if="repeater.ngArrProp(repeater.getFourItems,$index,3,2,'id') != ''">
       <button>
-        {{repeater.getNgRepeatArrayObjectProperty(repeater.getFourItems,$index,3,3,'id')}}
+        {{repeater.ngArrProp(repeater.getFourItems,$index,3,3,'id')}}
       </button>
     </span>
 

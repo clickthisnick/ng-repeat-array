@@ -5,12 +5,12 @@ app.controller('Controller', function() {
 
   var repeater = this;
 
-  repeater.getNgRepeatArray = function(items,numberPerRow){
-    return NgArrayRepeat.getNgRepeatArray(items,numberPerRow);
+  repeater.ngArrLoop = function(items,numberPerRow){
+    return NgArrRepeat.ngArrLoop(items,numberPerRow);
   };
 
-  repeater.getNgRepeatArrayObjectProperty = function(images,index,columnTotal,column,property){
-    return NgArrayRepeat.getNgRepeatArrayObjectProperty(images,index,columnTotal,column,property);
+  repeater.ngArrProp = function(images,index,columnTotal,column,property){
+    return NgArrRepeat.ngArrProp(images,index,columnTotal,column,property);
   };
 
   repeater.getFourItems = [{'id':1},{'id':2},{'id':3},{'id':4}];
